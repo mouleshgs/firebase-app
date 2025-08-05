@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "../firebase";
+import { Navigate, useNavigate } from "react-router-dom";
 
 export default function AddMovie() {
+
+  const navigate = useNavigate();
   const [title, setTitle] = useState("");
   const [year, setYear] = useState("");
   const [description, setDescription] = useState("");
@@ -13,7 +16,8 @@ export default function AddMovie() {
     setTitle("");
     setYear("");
     setDescription("");
-    alert("Movie added!");
+    alert("Movie added!");  
+    navigate("/");
   };
 
   return (
