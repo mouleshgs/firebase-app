@@ -9,17 +9,22 @@ export default function Home() {
 
   const navigate = useNavigate();
   useEffect(() => {
+
     const fetchMovies = async () => {
       const snapshot = await getDocs(collection(db, "movies"));
       const data = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
       setMovies(data);
     };
     fetchMovies();
+
   }, []);
 
 function handleClick() {
+
     navigate("/add");
+
 }
+
   return (
     <div className="p-4">
       <h1 className="text-2xl font-bold mb-4">🎬 My Letterboxd</h1>

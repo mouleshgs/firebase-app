@@ -4,6 +4,7 @@ import MovieDetails from "./pages/MovieDetails";
 import AddMovie from "./pages/AddMovie";
 
 function App() {
+  
   return (
     <BrowserRouter>
       <Routes>
